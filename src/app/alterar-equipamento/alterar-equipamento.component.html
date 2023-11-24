@@ -1,1 +1,46 @@
-<p>alterar-equipamento works!</p>
+<div class="container">
+    <br>
+    <h3>Inserir Novo Equipamento</h3>
+    <br>
+
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group row">
+            <div class="col-4">
+        <!-- Notebook -->
+        <label for="possuinotebook">Possui Notebook:</label>
+        <input type="checkbox" id="possuinotebook" name="possuinotebook">
+
+        <label for="descricaonotebook">Descrição Notebook:</label>
+        <input type="text" id="descricaonotebook" name="descricaonotebook">
+
+        <label for="dataentreganotebook">Data Entrega Notebook:</label>
+        <input type="date" id="dataentreganotebook" name="dataentreganotebook">
+
+        <label for="patrimonionotebook">Partição Notebook:</label>
+        <input type="number" id="patrimonionotebook" name="patrimonionotebook">
+
+        <!-- Tela -->
+        <label for="possuitela">Possui Tela:</label>
+        <input type="checkbox" id="possuitela" name="possuitela">
+
+        <label for="descricaotela">Descrição Tela:</label>
+        <input type="text" id="descricaotela" name="descricaotela">
+
+        <label for="dataentregatela">Data Entrega Tela:</label>
+        <input type="date" id="dataentregatela" name="dataentregatela">
+
+        <label for="patrimoniotela">Partição Tela:</label>
+        <input type="number" id="patrimoniotela" name="patrimoniotela">
+        </div>
+        </div>                    
+
+        <br>
+        <div class="form-group row">
+            <div class="col-4">
+                <button class="btn btn-info" type="submit">Salvar</button>
+                <button (click)="retornar()" class="btn btn-success" style="margin-left: 10px;">Voltar</button>
+            </div>
+        </div>
+    </form>
+</div>
