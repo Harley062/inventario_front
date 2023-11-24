@@ -1,0 +1,40 @@
+<h2 class="text-center">Lista de Pessoas</h2>
+<div class="container">
+    <table class="table table-striped">
+        
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Departamento</th>
+                <th>Data de Contratação</th>
+                <th>Ativo</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let pessoa of pessoas">
+                <td>{{ pessoa.codigo }}</td>
+                <td>{{ pessoa.nome }}</td>
+                <td>{{ pessoa.departamento }}</td>
+                <td>{{ pessoa.dataContratacao}}</td> 
+                <!-- | date: 'dd/MM/yyyy' -->
+                <td>{{ pessoa.ativo==true ? 'Sim':'Não' }}</td>
+
+                <td>
+                    <button (click) = "consultarPessoa(pessoa.codigo)" class="btn btn-success" style="margin-left: 10px;">Consultar</button>
+                    <button (click) = "alterarPessoa(pessoa.codigo)" class="btn btn-info" style="margin-left: 10px;">Alterar</button>
+                    <button (click) = "excluirPessoa(pessoa.codigo)" class="btn btn-danger" style="margin-left: 10px;">Excluir</button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <button (click) = "inserirPessoa()" class="btn btn-info" style="margin-left: 10px;">Inserir Nova Pessoa</button>
+
+
+</div>

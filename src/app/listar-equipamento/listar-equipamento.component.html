@@ -1,0 +1,50 @@
+<h2 class="text-center">Lista de Equipamentos</h2>
+<div class="container">
+    <table class="table table-striped">
+        
+        <thead>
+            <tr>
+                <th>Código</th>
+                <!-- <th>Nome</th> -->
+                <th>Possui Notebook?</th>
+                <th>Descrição do Notebook</th>
+                <th>Data de Entrega Do Notebook</th>
+                <th>Patrimonio do Notebook</th>
+                <th>Possui Tela?</th>
+                <th>Descrição da Tela</th>
+                <th>Data de Entrega da Tela</th>
+                <th>Patrimonio da Tela</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let equipamento of equipamentos">
+                <td>{{ equipamento.codigo }}</td>
+                <!-- <td>{{ equipamento.pessoa.nome}}</td> -->
+                <td>{{ equipamento.possuinotebook==true ? 'Sim':'Não' }}</td>
+                <td>{{ equipamento.descricaonotebook}}</td>
+                <!-- | date: 'dd/MM/yyyy'}}</td> -->
+
+                <td>{{ equipamento.dataentreganotebook}}</td>
+                <td>{{ equipamento.patrimonionotebook}}</td>
+                <td>{{ equipamento.possuitela==true ? 'Sim':'Não' }}</td>
+                <td>{{ equipamento.descricaotela}}</td>
+                <td>{{ equipamento.dataentregatela}}</td>
+                <td>{{ equipamento.patrimoniotela}}</td>
+
+                <td>
+                    <button (click) = "consultarEquipamento(equipamento.codigo)" class="btn btn-success" style="margin-left: 10px;">Consultar</button>
+                    <button (click) = "alterarEquipamento(equipamento.codigo)" class="btn btn-info" style="margin-left: 10px;">Alterar</button>
+                    <button (click) = "excluirEquipamento(equipamento.codigo)" class="btn btn-danger" style="margin-left: 10px;">Excluir</button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <button (click) = "inserirEquipamento()" class="btn btn-info" style="margin-left: 10px;">Inserir Nova Equipamento</button>
+
+
+</div>
